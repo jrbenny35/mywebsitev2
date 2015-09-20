@@ -1,0 +1,25 @@
+html
+  body
+    section(data-ng-controller='ProjectsController')
+      .page-header
+        h1 New Project
+      .col-md-12
+        form.form-horizontal(data-ng-submit='create()', novalidate='')
+          fieldset
+            .form-group
+              label.control-label(for='title') Title
+              .controls
+                input#name.form-control(type='text', data-ng-model='title', placeholder='Project Title', required='true')
+              label.control-label(for='name') Description
+              .controls
+                input#name.form-control(type='text', data-ng-model='descrip', placeholder='Project Description', required='')
+              label.control-label(for='name') Link
+              .controls
+                input#name.form-control(type='text', data-ng-model='link', placeholder='Project Link', required='')
+              label.control-label(for='name') Last updated
+              .controls
+                input#name.form-control(type='text', data-ng-model='updated', placeholder="Project's last update", required='')
+            .form-group
+              input.btn.btn-default(type='submit')
+            .text-danger(data-ng-show='error')
+              strong(data-ng-bind='error')

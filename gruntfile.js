@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         files: _.union(defaultAssets.server.gruntConfig, defaultAssets.server.allJS),
         tasks: ['jshint'],
         options: {
-          livereload: true
+          livereload: false
         }
       },
       clientViews: {

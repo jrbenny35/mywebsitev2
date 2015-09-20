@@ -1,0 +1,38 @@
+
+<html>
+  <body>
+    <section data-ng-controller="ProjectsController">
+      <div class="page-header">
+        <h1>New Project</h1>
+      </div>
+      <div class="col-md-12">
+        <form data-ng-submit="create()" novalidate="" class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label for="title" class="control-label">Title</label>
+              <div class="controls">
+                <input id="name" type="text" data-ng-model="title" placeholder="Project Title" required="true" class="form-control"/>
+              </div>
+              <label for="name" class="control-label">Description</label>
+              <div class="controls">
+                <input id="name" type="text" data-ng-model="descrip" placeholder="Project Description" required="" class="form-control"/>
+              </div>
+              <label for="name" class="control-label">Link</label>
+              <div class="controls">
+                <input id="name" type="text" data-ng-model="link" placeholder="Project Link" required="" class="form-control"/>
+              </div>
+              <label for="name" class="control-label">Last updated</label>
+              <div class="controls">
+                <input id="name" type="text" data-ng-model="updated" placeholder="Project's last update" required="" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-default"/>
+            </div>
+            <div data-ng-show="error" class="text-danger"><strong data-ng-bind="error"></strong></div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

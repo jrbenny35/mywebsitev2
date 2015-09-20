@@ -1,0 +1,26 @@
+
+<html>
+  <body>
+    <section data-ng-controller="ProjectsController">
+      <div class="page-header">
+        <h1>New Project</h1>
+      </div>
+      <div class="col-md-12">
+        <form data-ng-submit="create()" novalidate="" class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label for="name" class="control-label">Name111aand</label>
+              <div class="controls">
+                <input id="name" type="text" data-ng-model="name" placeholder="Name" required="" class="form-control"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-default"/>
+            </div>
+            <div data-ng-show="error" class="text-danger"><strong data-ng-bind="error"></strong></div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

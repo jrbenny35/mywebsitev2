@@ -40,7 +40,7 @@ gulp.task('nodemon', function () {
 // Watch Files For Changes
 gulp.task('watch', function() {
   // Start livereload
-  plugins.livereload.listen();
+  plugins.livereload.listen('3000');
 
   // Add watch rules
   gulp.watch(defaultAssets.server.gulpConfig, ['jshint']);

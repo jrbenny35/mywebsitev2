@@ -10,7 +10,6 @@
 [x-ng-cloak],
 .ng-cloak,
 .x-ng-cloak {
-  display: none !important;
 }
 .ng-invalid.ng-dirty {
   border-color: #FA787E;
