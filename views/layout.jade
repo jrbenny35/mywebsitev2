@@ -1,0 +1,145 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    // Place favicon.ico and apple-touch-icon.png in the root directory
+    // build:css(.) styles/vendor.css
+    // bower:css
+
+    link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material.css')
+    link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/ripples.css')
+    link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
+    // endbower
+    // endbuild
+    // build:css(.tmp) styles/main.css
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material-fullpalette.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/projects.css')
+    link(rel='stylesheet', href='/stylesheets/form-control.css')
+    link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
+    // endbuild
+  body(ng-app='webApp', style='padding: .5rem')
+    //if lte IE 8
+      p.browsehappy
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    // Add your site or application content here
+    .navbar.navbar-default.hidden-lg.hidden-md(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#js-navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand Benny Jr
+        #js-navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav(ng-controller='navCntrl')
+            li.nav-link(ng-class="{active: isActive('/home')}")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/home') Home
+            li.nav-link(ng-class="{active: isActive('/about')}")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/about') About Me
+            li.nav-link(ng-class="{active: isActive('/resume')}")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/resume') My Resume
+            li.nav-link(ng-class="{active: isActive('/projects')}")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/projects') Projects
+            li.nav-link(ng-class="{active: isActive('/contact')}")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/contact') Contact
+    #mainTitle.col-lg-12.material-blue-grey-500.shadow-z-1.hidden-xs
+      h1 Brand Name
+    #side-nav-container.container-fluid
+      #side-nav.row
+        .col-lg-3.col-md-3.hidden-xs
+          h2 Navigation
+          ul.nav.nav-pills.nav-stacked.fixed(ng-controller='navCntrl')
+            li.nav-link.hvr-grow(ng-class="{active: isActive('/home')}")
+              a.shadow-z-1(href='#/home')
+                h4 Home
+            hr
+            li.nav-link.hvr-grow(ng-class="{active: isActive('/about')}")
+              a.shadow-z-1(ng-href='#/about')
+                h4 About Me
+            li.nav-link.hvr-grow(ng-class="{active: isActive('/resume')}")
+              a.shadow-z-1(ng-href='#/resume')
+                h4 My Resume
+            li.nav-link.hvr-grow(ng-class="{active: isActive('/projects')}")
+              a.shadow-z-1(ng-href='#/projects')
+                h4 Projects
+            li.nav-link.hvr-grow(ng-class="{active: isActive('/contact')}")
+              a.shadow-z-1(ng-href='#/contact')
+                h4 Contact
+        #view.col-lg-6.col-md-6(ui-view="")
+        #socialMediaFeed.col-lg-3.col-md-3
+          h2 Social Media Feed
+          .container-fluid.shadow-z-1.morePadding.addMargin
+            h3
+              | Twitter  
+              span.glyphicon.glyphicon-send.socialMedia
+            hr
+            a.twitter-timeline(href='https://twitter.com/bigbenjr135', data-widget-id='648968585075933184') Tweets by @bigbenjr135
+          .container-fluid.shadow-z-1.morePadding.addMargin(style="border: 1px solid black;")
+            h3
+              | Google+  
+              span.glyphicon.glyphicon-hand-down.socialMedia
+            hr
+            iframe(src="http://widgetsplus.com:8080/75406.htm" width="100%" height="250px" style="padding:0; margin:auto; overflow:hidden;" frameborder="0")
+    .footer
+      hr
+      .container
+        p
+          span.glyphicon.glyphicon-heart
+          |  from the Yeoman team
+    // Google Analytics: change UA-XXXXX-X to be your site's ID
+    script.
+      !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+                (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+              r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+      }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+
+    script(type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular/angular.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular-animate/angular-animate.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular-aria/angular-aria.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular-ui-router/release/angular-ui-router.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/material.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/ripples.min.js')
+    script(type="text/javascript" src='/javascripts/app.js')
+    script(type="text/javascript" src='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.js')
+    //script(type="text/javascript" src='/javascripts/custom/index.js')
+
+
+    // endbuild
+    script.
+      $(function () {
+        $('.gplus2').kycoGooglePlusFeed2({
+          id: '116899029375914044550',
+          feedPosts: 2,           // Feed posts to show on load
+          postsIncrement: 1,      // Number of feed posts to show on "Show more" button click
+          maxPosts: 5,            // Max number of posts to pull before "Show more" will go to Google+, cannot excced 20 because of Google API in use
+          profileImageSize: 150,  // Max is 250
+          fadeSpeed: 0,           // Fade-in animation duration
+          loadAttachments: true, // Load images, videos, links and other attachments into feed?
+          orderBy: 'popularity',  // Either 'date' or 'popularity'
+          sort: 'asc',            // Either 'asc' or 'desc'
+          lang: 'en'              // Default language, can also be set to 'de'
+        });
+      });
+
+    script.
+      !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0],
+                p=/^http:/.test(d.location)?'http':'https';
+        if(!d.getElementById(id)){
+          js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}
+      }(document,"script","twitter-wjs");

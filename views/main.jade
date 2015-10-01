@@ -1,0 +1,31 @@
+html
+  body
+    .container-fluid
+      .row
+        .col-lg-12.col-md-12
+          #bigCallout.container-fluid
+            h1 Welcome!
+            p.lead
+              img(src='images/logo.jpg', alt='My Brand')
+              br
+              |                 This is the my simple website. I hope you enjoy!
+            p
+              a.btn.btn-lg.btn-success.btn-material-teal-400(ng-href='#/About')
+                | About Me 
+                span.glyphicon.glyphicon-hand-left
+          .row
+            .col-md-7.marketing
+              h2 Site contents
+              h4 My Resume
+              p
+                | You will find a link to the left, or a link above (if you are on mobile) to view and or download my resume.
+              h4 About Me
+              p
+                | A simple bio as well as links for social media!
+              h4 Projects
+              p Interested in seeing what I am up to? Check out the projects tab!
+            #inTouch.container-fluid.col-md-5.hidden-xs
+              h1
+                | Stay In touch
+              p.btn.btn-secondary.btn-raised.btn-material-teal-400.hvr-grow
+                a(href='#/contact') Click Here
