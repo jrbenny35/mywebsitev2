@@ -20,7 +20,7 @@ html
     link(rel='stylesheet', href='/stylesheets/main.css')
     link(rel='stylesheet', href='/stylesheets/projects.css')
     link(rel='stylesheet', href='/stylesheets/form-control.css')
-    link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
+    base(href="/")
     // endbuild
   body(ng-app='webApp', style='padding: .5rem')
     //if lte IE 8
@@ -43,7 +43,7 @@ html
             span.icon-bar
           a.navbar-brand Benny Jr
         #js-navbar-collapse.collapse.navbar-collapse
-          ul.nav.navbar-nav(ng-controller='navCntrl')
+          ul.nav.navbar-nav()
             li.nav-link(ng-class="{active: isActive('/home')}")
               a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/home') Home
             li.nav-link(ng-class="{active: isActive('/about')}")
@@ -60,22 +60,22 @@ html
       #side-nav.row
         .col-lg-3.col-md-3.hidden-xs
           h2 Navigation
-          ul.nav.nav-pills.nav-stacked.fixed(ng-controller='navCntrl')
-            li.nav-link.hvr-grow(ng-class="{active: isActive('/home')}")
-              a.shadow-z-1(href='#/home')
+          ul.nav.nav-pills.nav-stacked.fixed(style="text-align: center;")
+            li.nav-link.hvr-grow(ui-sref-active="active")
+              a.shadow-z-1(ui-sref="/")
                 h4 Home
             hr
-            li.nav-link.hvr-grow(ng-class="{active: isActive('/about')}")
-              a.shadow-z-1(ng-href='#/about')
+            li.nav-link.hvr-grow(ui-sref-active="active")
+              a.shadow-z-1(ui-sref='about')
                 h4 About Me
-            li.nav-link.hvr-grow(ng-class="{active: isActive('/resume')}")
-              a.shadow-z-1(ng-href='#/resume')
+            li.nav-link.hvr-grow(ui-sref-active="active")
+              a.shadow-z-1(ui-sref='resume')
                 h4 My Resume
-            li.nav-link.hvr-grow(ng-class="{active: isActive('/projects')}")
-              a.shadow-z-1(ng-href='#/projects')
+            li.nav-link.hvr-grow(ui-sref-active="active")
+              a.shadow-z-1(ui-sref='projects')
                 h4 Projects
-            li.nav-link.hvr-grow(ng-class="{active: isActive('/contact')}")
-              a.shadow-z-1(ng-href='#/contact')
+            li.nav-link.hvr-grow(ui-sref-active="active")
+              a.shadow-z-1(ui-sref='contact')
                 h4 Contact
         #view.col-lg-6.col-md-6(ui-view="")
         #socialMediaFeed.col-lg-3.col-md-3
@@ -108,33 +108,20 @@ html
       ga('send', 'pageview');
 
     script(type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js')
-    script(type="text/javascript" src='/javascripts/vendor/angular/angular.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular/angular.js')
+    script(type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/angular-resource/angular-resource.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-animate/angular-animate.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-aria/angular-aria.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/material.min.js')
     script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/ripples.min.js')
     script(type="text/javascript" src='/javascripts/app.js')
-    script(type="text/javascript" src='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.js')
+    script(type="text/javascript" src='/javascripts/controllers.js')
+
     //script(type="text/javascript" src='/javascripts/custom/index.js')
 
 
-    // endbuild
-    script.
-      $(function () {
-        $('.gplus2').kycoGooglePlusFeed2({
-          id: '116899029375914044550',
-          feedPosts: 2,           // Feed posts to show on load
-          postsIncrement: 1,      // Number of feed posts to show on "Show more" button click
-          maxPosts: 5,            // Max number of posts to pull before "Show more" will go to Google+, cannot excced 20 because of Google API in use
-          profileImageSize: 150,  // Max is 250
-          fadeSpeed: 0,           // Fade-in animation duration
-          loadAttachments: true, // Load images, videos, links and other attachments into feed?
-          orderBy: 'popularity',  // Either 'date' or 'popularity'
-          sort: 'asc',            // Either 'asc' or 'desc'
-          lang: 'en'              // Default language, can also be set to 'de'
-        });
-      });
 
     script.
       !function(d,s,id){

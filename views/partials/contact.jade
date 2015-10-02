@@ -1,0 +1,18 @@
+//
+   Created by root on 9/23/15.
+.container-fluid#contact
+  h1 Contact me
+  hr
+  h3 Please fill out this contact form below
+  form(ng-controller="ContactAddCtrl", role="form" ng-submit="sendEmail()")
+    .form-group
+      label.control-label(for = "Name") Name
+      input.form-control#title(type = "text", ng-model = "contact.name", placeholder = "Your name here")
+    .form-group
+      label.control-label(for = "Email") Email
+      input.form-control#title(type = "text", ng-model = "contact.email", placeholder = "Your email address here")
+    .form-group
+      label.control-label(for = "Message") Message
+      input.form-control#title(type = "text", ng-model = "contact.message", placeholder = "Spill your heart out here")
+    input.btn.btn-primary(type = "submit", ng-click="saveContact()" value= "Send")
+

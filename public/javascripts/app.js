@@ -5,20 +5,44 @@
 'use strict';
 
 var myApp = angular.module('webApp', [
-        'ngAnimate',
-        'ui.router',
-        'controllers'//Add restangular for rest functions
+    'ui.router',
+    'ngAnimate',
+    'controllers',
+    'ngResource'
 
-    ])
-    .config(function ($urlrRouteProvider, $stateProvider, $locationProvider) {
-        $urlrRouteProvider.otherwise('/home');
+    ]);
+myApp.config(function ($stateProvider, $locationProvider) {
+
 
         $stateProvider
+            .state('/', {
+                url: '/',
+                templateUrl: 'partials/main'
+            })
             .state('home',{
                 url: '/home',
-                templateUrl: 'public/views/main.html',
-                controller: mainCtrl
+                templateUrl: 'partials/main'
+            })
+            .state('about',{
+                url: '/about',
+                templateUrl: 'partials/about'
+            })
+            .state('contact',{
+                url: '/contact',
+                templateUrl: 'partials/contact'
+            })
+            .state('projects',{
+                url: '/projects',
+                templateUrl: 'partials/projects',
+                controller: 'ProjectsCtrl'
+            })
+            .state('resume',{
+                url: '/resume',
+                templateUrl: 'partials/resume'
             });
 
         $locationProvider.html5Mode(true);
     });
+myApp.factory('Projects', function($resource) {
+    return $resource('/api/projects/:id'); //full endpoint address
+});

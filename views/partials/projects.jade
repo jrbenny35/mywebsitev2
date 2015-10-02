@@ -1,0 +1,24 @@
+//
+   Created by root on 9/17/15.
+doctype
+html
+  head
+  body
+    .container-fluid#myPortfolio
+      h1 My Portfolio
+      hr
+      .container-fluid
+        .row
+          .col-lg-4(ng-controller="ProjectsCtrl" ng-repeat= "project in projects")
+            .card.shadow-z-1.container-fluid
+              img.card-img-top.img-responsive(src="images/yeoman.png", alt="Document image")
+              hr
+              .card-block
+                h4.card-title {{ project.title }}
+                p.card-text.
+                  {{ project.description }}
+                .span.text-muted Updated on: {{ project.updated_On }}
+                a(href="{{ project.link }}", role= "button").btn.btn-default View
+
+
+

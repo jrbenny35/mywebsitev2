@@ -17,6 +17,8 @@
     "bootstrap-material-design": "~0.3.0",
     "angular-ui-router": "~0.2.15",
     "jquery.kyco.googleplusfeed2": "~2.1.1",
-    "hover": "~2.0.2"
+    "hover": "~2.0.2",
+    "angular-route": "~1.4.7",
+    "angular-resource": "~1.4.7"
   }
 }
