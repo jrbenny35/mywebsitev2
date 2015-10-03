@@ -12,13 +12,29 @@ module.controller('ProjectsCtrl', ['$scope', 'Projects', function ($scope, Proje
 
 }]);
 
-module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact) {
+module.controller('ContactCtrl', ['$scope', 'Contact', '$http', 'ContactForm', function ($scope, Contact, $http, ContactForm) {
 
-    $scope.contact = {};
+    $scope.contact = new Contact();
 
     $scope.saveContact = function(){
-        Contact.save();
-    }
+        $scope.contact.$save();
+    };
+
+    $scope.sendEmail = function(){
+
+        var data = ({
+            contactName : $scope.name,
+            contactEmail : $scope.email,
+            contactMessage : $scope.message
+        });
+
+        $http({
+            method: 'POST',
+            url: '/contact-form',
+            data: data
+        });
+    };
+
 
 }]);//End ContactCtrl
 

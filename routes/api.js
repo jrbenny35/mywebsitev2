@@ -22,14 +22,28 @@ router.get('/projects', function(req, res){
 });
 
 
-router.get('/contact', function(req, res){
-   return models.contact.find(function(err, contact){
-      if (!err){
-         return res.send(contact);
+router.post('/contact', function(req, res){
+
+   var contact;
+   console.log("POST: ");
+   console.log(req.body);
+
+   contact = new models.contact({
+      name: req.body.name,
+      email: req.body.email,
+      message: req.body.message
+   });
+
+   contact.save(function (err) {
+      if (!err) {
+         return console.log("Created");
       } else {
          return console.log(err);
       }
    });
+
+   return res.send(contact);
+
 });
 
 
