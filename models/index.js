@@ -3,6 +3,6 @@
  */
 
 module.exports = {
-    projects: require('./projects.js')
-    //contact: require('./Contact.js')
+    projects: require('./projects.js'),
+    contact: require('./contact.js')
 };

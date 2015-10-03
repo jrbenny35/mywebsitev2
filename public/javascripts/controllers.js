@@ -10,5 +10,15 @@ module.controller('ProjectsCtrl', ['$scope', 'Projects', function ($scope, Proje
 
     $scope.projects = Projects.query();
 
-
 }]);
+
+module.controller('ContactCtrl', ['$scope', 'Contact', function ($scope, Contact) {
+
+    $scope.contact = {};
+
+    $scope.saveContact = function(){
+        Contact.save();
+    }
+
+}]);//End ContactCtrl
+

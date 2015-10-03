@@ -2,10 +2,9 @@
  * Created by root on 10/1/15.
  */
 
-var restful = require('node-restful');
+
 var express = require('express');
 var app = express();
-var mongoose = require('mongoose');
 var router = express.Router();
 
 //models
@@ -22,6 +21,16 @@ router.get('/projects', function(req, res){
    });
 });
 
+
+router.get('/contact', function(req, res){
+   return models.contact.find(function(err, contact){
+      if (!err){
+         return res.send(contact);
+      } else {
+         return console.log(err);
+      }
+   });
+});
 
 
 module.exports = router;

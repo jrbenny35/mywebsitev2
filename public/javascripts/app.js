@@ -29,7 +29,8 @@ myApp.config(function ($stateProvider, $locationProvider) {
             })
             .state('contact',{
                 url: '/contact',
-                templateUrl: 'partials/contact'
+                templateUrl: 'partials/contact',
+                controller: 'ContactCtrl'
             })
             .state('projects',{
                 url: '/projects',
@@ -43,6 +44,12 @@ myApp.config(function ($stateProvider, $locationProvider) {
 
         $locationProvider.html5Mode(true);
     });
+
+//Resources
 myApp.factory('Projects', function($resource) {
     return $resource('/api/projects/:id'); //full endpoint address
+});
+
+myApp.factory('Contact', function($resource) {
+    return $resource('/api/contact/:id'); //full endpoint address
 });
