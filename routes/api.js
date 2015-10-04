@@ -6,6 +6,8 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
+var nodemailer = require('nodemailer');
+
 
 //models
 var models = require('../models/index');
@@ -41,6 +43,37 @@ router.post('/contact', function(req, res){
          return console.log(err);
       }
    });
+
+   //Nodemailer email
+   console.log('Nodemailer post ' + req.body);
+
+   //Create Transport Service
+   var transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+         user: 'bennyjr169@gmail.com',
+         pass: 'Rustler@169'
+      }
+   });
+
+   //Define mail parameters
+   var mailOptions = {
+      from: 'Node app bennyjr169@gmail.com', // sender address
+      to: 'bennyjr169@gmail.com', // list of receivers
+      subject: req.body.name + ' Sent you an email!', // Subject line
+      text: req.body.email + ' Sent you an email. They wrote: ' + req.body.message // plaintext body
+   };
+
+   // send mail with defined transport object
+   transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+         return console.log(error);
+      }
+      console.log('Message sent: ' + info.response);
+      transporter.close();
+
+   });
+
 
    return res.send(contact);
 

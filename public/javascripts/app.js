@@ -53,7 +53,3 @@ myApp.factory('Projects', function($resource) {
 myApp.factory('Contact', function($resource) {
     return $resource('/api/contact/:id'); //full endpoint address
 });
-
-myApp.factory('ContactForm', function($resource) {
-    return $resource('/contact-form'); //full endpoint address
-});

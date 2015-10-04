@@ -4,7 +4,7 @@
   h1 Contact me
   hr
   h3 Please fill out this contact form below
-  form(ng-controller="ContactCtrl", role="form" ng-submit="sendEmail();saveContact()")
+  form(ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
     .form-group
       label.control-label(for = "Name") Name
       input.form-control#title(type = "text", ng-model = "contact.name", placeholder = "Your name here")
