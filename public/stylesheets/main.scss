@@ -152,7 +152,6 @@ hr{
 
 .navbar{
   margin-bottom: 0;
-  background-color: white !important; //material-blue-grey-300
 }
 
 .nav-link a:link, a:visited{
@@ -283,4 +282,17 @@ hr{
   .socialMedia{
 
   }
+}
+
+/* ---------- Google Plus Feed ---------- */
+
+.kyco_googleplusfeed {
+  width: auto;
+  border: 1px solid #d8d8d8;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  color: #404040;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
 }

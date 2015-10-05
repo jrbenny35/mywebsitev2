@@ -47,7 +47,8 @@ module.exports = function(grunt){
             index:{
                 src:[
                     'public/javascripts/app.js',
-                    'public/javascripts/controllers.js'
+                    'public/javascripts/controllers.js',
+                    'public/javascripts/custom/index.js'
                 ],
                 dest:'public/dist/javascripts/indexFinal.js'
             }

@@ -32,6 +32,9 @@ myApp.config(function ($stateProvider, $locationProvider) {
                 templateUrl: 'partials/contact',
                 controller: 'ContactCtrl'
             })
+            .state('contact-thankyou', {
+                templateUrl: 'partials/contact-thankyou'
+            })
             .state('projects',{
                 url: '/projects',
                 templateUrl: 'partials/projects',

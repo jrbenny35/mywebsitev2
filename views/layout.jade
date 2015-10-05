@@ -17,6 +17,7 @@ html
     // build:css(.tmp) styles/main.css
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material-fullpalette.css')
+    link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href="/")
     // endbuild
@@ -42,16 +43,16 @@ html
           a.navbar-brand Benny Jr
         #js-navbar-collapse.collapse.navbar-collapse
           ul.nav.navbar-nav()
-            li.nav-link(ng-class="{active: isActive('/home')}")
-              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/home') Home
-            li.nav-link(ng-class="{active: isActive('/about')}")
-              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/about') About Me
-            li.nav-link(ng-class="{active: isActive('/resume')}")
-              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/resume') My Resume
-            li.nav-link(ng-class="{active: isActive('/projects')}")
-              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/projects') Projects
-            li.nav-link(ng-class="{active: isActive('/contact')}")
-              a(data-toggle='collapse', data-target='#js-navbar-collapse', ng-href='#/contact') Contact
+            li.nav-link(ui-sref-active="active")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ui-sref='/') Home
+            li.nav-link(ui-sref-active="active")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ui-sref='about') About Me
+            li.nav-link(ui-sref-active="active")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ui-sref='resume') My Resume
+            li.nav-link(ui-sref-active="active")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ui-sref='projects') Projects
+            li.nav-link(ui-sref-active="active")
+              a(data-toggle='collapse', data-target='#js-navbar-collapse', ui-sref='contact') Contact
     #mainTitle.col-lg-12.material-blue-grey-500.shadow-z-1.hidden-xs
       h1 Brand Name
     #side-nav-container.container-fluid
@@ -84,12 +85,12 @@ html
               span.glyphicon.glyphicon-send.socialMedia
             hr
             a.twitter-timeline(href='https://twitter.com/bigbenjr135', data-widget-id='648968585075933184') Tweets by @bigbenjr135
-          .container-fluid.shadow-z-1.morePadding.addMargin(style="border: 1px solid black;")
+          .container-fluid.shadow-z-1.morePadding.addMargin
             h3
               | Google+  
               span.glyphicon.glyphicon-hand-down.socialMedia
             hr
-            iframe(src="http://widgetsplus.com:8080/75406.htm" width="100%" height="250px" style="padding:0; margin:auto; overflow:hidden;" frameborder="0")
+            .gplus2
     .footer
       hr
       .container
@@ -105,10 +106,9 @@ html
     script(type="text/javascript" src='/javascripts/vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/material.min.js')
     script(type="text/javascript" src='/javascripts/vendor/bootstrap-material-design/dist/js/ripples.min.js')
+    script(type="text/javascript" src='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.min.js')
     script(type="text/javascript" src='/dist/javascripts/indexFinal.min.js')
 
-
-    //script(type="text/javascript" src='/javascripts/custom/index.js')
 
 
 

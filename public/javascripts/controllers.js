@@ -12,14 +12,16 @@ module.controller('ProjectsCtrl', ['$scope', 'Projects', function ($scope, Proje
 
 }]);
 
-module.controller('ContactCtrl', ['$scope', 'Contact', '$http', function ($scope, Contact, $http) {
+module.controller('ContactCtrl', ['$scope', 'Contact', '$http', '$state', function ($scope, Contact, $http, $state) {
 
 
     $scope.contact = new Contact();
 
     $scope.saveContact = function(){
 
-        $scope.contact.$save();
+        $scope.contact.$save().then(function(){
+            $state.go('contact-thankyou');
+        });
     };
 
 
