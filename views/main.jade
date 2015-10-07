@@ -10,8 +10,7 @@ html
               br
               |                 This is the my simple website. I hope you enjoy!
             p
-              a.btn.btn-lg.btn-success.btn-material-teal-400(ng-href='#/About')
-                | About Me 
+              a.btn.btn-lg.btn-success.btn-material-teal-400(ui-sref='about') About Me
                 span.glyphicon.glyphicon-hand-left
           .row
             .col-md-7.marketing
@@ -27,5 +26,5 @@ html
             #inTouch.container-fluid.col-md-5.hidden-xs
               h1
                 | Stay In touch
-              p.btn.btn-secondary.btn-raised.btn-material-teal-400.hvr-grow
-                a(href='#/contact') Click Here
+              p
+                a.btn.btn-secondary.btn-raised.btn-material-teal-400.hvr-grow(ui-sref='contact') Contact
