@@ -7,12 +7,25 @@
   form(ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
     .form-group
       label.control-label(for = "Name") Name
-      input.form-control#title(type = "text", ng-model = "contact.name", placeholder = "Your name here")
+      input.form-control(type = "text", ng-model = "contact.name", placeholder = "Your name here", required)
     .form-group
       label.control-label(for = "Email") Email
-      input.form-control#title(type = "text", ng-model = "contact.email", placeholder = "Your email address here")
+      input.form-control(type = "text", ng-model = "contact.email", placeholder = "Your email address here", required)
     .form-group
       label.control-label(for = "Message") Message
-      input.form-control#title(type = "text", ng-model = "contact.message", placeholder = "Spill your heart out here")
+      input.form-control(type = "text", ng-model = "contact.message", placeholder = "Spill your heart out here")
     input.btn.btn-primary(type = "submit" value= "Send")
+  br
+  h1 Reach out to me here if you wish
+  hr
+  .container-fluid
+    .row
+      .col-lg-6
+        h3 Linked in
+        img(src="images/CBpFkPaz.png", height="1000px", width="auto", alt="linked in")
+        a.btn.btn-secondary(href="http://linkedin.com/in/benjaminforehandjr", target="_blank") Linked in
+      .col-lg-6
+        h3 Github
+        img(src="images/github-mark@1200x630.png", height="1000px", width="auto", alt="github img")
+        a.btn.btn-secondary(href="http://github.com/jrbenny35", target="_blank") Github
 

@@ -6,10 +6,12 @@ describe('My Website Tests', function() {
         browser.get('http://localhost:3000');
     });
 
+    /*-------------------------------------------------------------------*/
     it('should have a title', function(){
         expect(browser.getTitle()).toEqual('Benjamin Forehand Jr');
     });
-    
+
+    /*-------------------------------------------------------------------*/
     //Test Nav Links load correct url
     it('should load navigation links', function () {
         element(by.id('side-nav')).all(by.tagName('h4'))
@@ -46,7 +48,7 @@ describe('My Website Tests', function() {
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
     });
 
-
+    /*-------------------------------------------------------------------*/
     //Load first link on main partial
     it('should load links on main page to correct url', function () {
         element(by.id('side-nav')).all(by.tagName('h4'))
@@ -69,7 +71,8 @@ describe('My Website Tests', function() {
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
     });
 
-    //Check is projects load
+    /*-------------------------------------------------------------------*/
+    //Check if projects load
     it('should load projects', function () {
         element(by.id('side-nav')).all(by.tagName('h4'))
             .get(3)
@@ -78,6 +81,29 @@ describe('My Website Tests', function() {
         expect(currentProjects.count()).toBe(numberOfProjects);
     });
 
+
+    /*-------------------------------------------------------------------*/
+    //Check form sends and changes Url
+    it('should allow form input', function () {
+        element(by.id('side-nav')).all(by.tagName('h4'))
+            .get(4)
+            .click();
+        //Select form and send text
+        element(by.tagName('form')).all(by.tagName('input'))
+            .get(0)
+            .sendKeys('Protractor Form Test');
+        element(by.tagName('form')).all(by.tagName('input'))
+            .get(1)
+            .sendKeys('protractor@test.com');
+        element(by.tagName('form')).all(by.tagName('input'))
+            .get(2)
+            .sendKeys('This is a test from protractor');
+        element(by.css('.btn-primary')).click();
+        //Expect browser to load page on success
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
+
+
+    })
 
 
 });
