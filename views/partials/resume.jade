@@ -1,0 +1,25 @@
+//
+   Created by root on 9/25/15.
+.container-fluid#resume
+  h1 My Resume
+  hr
+  h3 I have provided a view and a download link for my resume
+  .container-fluid
+    p View Resume here
+    .btn.btn-default.btn-raised.btn-material-teal-300(data-toggle="modal" data-target="#my-dialog") View
+
+    p Download Resume here
+    a.btn.btn-default.btn-raised.btn-material-teal-300(target="_blank" href="/public/misc/Benjamin_Forehand_Resume_2015.docx" download="Benjamin_Forehand_Jr_Resume_2015.docx") Download
+
+  .modal.fade#my-dialog(tab-index="-1")
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button.close(type="button" data-dismiss="modal" aria-hidden="true") x
+          h3.modal-title Benjamin Forehand Jr - Resume
+          hr
+        .modal-body.container-fluid
+          iframe(src="https://drive.google.com/file/d/0B3r6aWctfAKPODFmV3pSRW0xTGM/preview" width="100%" height="480px")
+          hr
+        .modal-footer
+          btn.btn.btn-primary(data-dismiss="modal") Dismiss
