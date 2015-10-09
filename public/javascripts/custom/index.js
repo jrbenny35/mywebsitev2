@@ -14,4 +14,32 @@ $(function() {
         sort: 'asc',
         lang: 'en'
     });
+
+    var twit = 0;
+    var goog = 0;
+
+    $('#googleWidget').hide();
+
+
+
+    $('#twitterWidgetBtn').on('click', function () {
+        var twit = 1;
+        if(twit == 1) {
+            $('#googleWidgetBtn').removeClass('btn-material-teal-300');
+            $('#twitterWidgetBtn').addClass('btn-material-teal-300');
+            $('#twitterWidget').slideDown(500);
+            $('#googleWidget').slideUp(600);
+
+        }
+    });
+
+    $('#googleWidgetBtn').on('click', function () {
+        var goog = 1;
+        if(goog == 1) {
+            $('#twitterWidgetBtn').removeClass('btn-material-teal-300');
+            $('#googleWidgetBtn').addClass('btn-material-teal-300');
+            $('#googleWidget').slideDown(500);
+            $('#twitterWidget').slideUp(800);
+        }//end if
+    });
 });
