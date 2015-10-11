@@ -11,7 +11,8 @@ module.exports = function(grunt){
         sass: {
             index: {
                 files: {
-                    'public/dist/stylesheets/main.css': 'public/stylesheets/main.scss'
+                    'public/dist/stylesheets/main.css': 'public/stylesheets/main.scss',
+                    'public/dist/stylesheets/angularMaterialStyles.css': 'public/stylesheets/angularMaterialStyles.sass'
 
                 }
             }

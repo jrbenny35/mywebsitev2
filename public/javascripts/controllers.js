@@ -23,8 +23,12 @@ module.controller('ContactCtrl', ['$scope', 'Contact', '$http', '$state', functi
             $state.go('contact-thankyou');
         });
     };
-
-
-
 }]);//End ContactCtrl
 
+module.controller('LeftCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
+
+    $scope.toggleSidenav = function () {
+        $mdSidenav('left').toggle();
+    }
+
+}]);

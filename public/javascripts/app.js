@@ -8,7 +8,8 @@ var myApp = angular.module('webApp', [
     'ui.router',
     'ngAnimate',
     'controllers',
-    'ngResource'
+    'ngResource',
+    'ngMaterial'
 
     ]);
 myApp.config(function ($stateProvider, $locationProvider) {
@@ -17,7 +18,8 @@ myApp.config(function ($stateProvider, $locationProvider) {
         $stateProvider
             .state('/', {
                 url: '/',
-                templateUrl: 'partials/main'
+                templateUrl: 'partials/main',
+                controller: 'LeftCtrl'
             })
             .state('home',{
                 url: '/home',
@@ -55,4 +57,9 @@ myApp.factory('Projects', function($resource) {
 
 myApp.factory('Contact', function($resource) {
     return $resource('/api/contact/:id'); //full endpoint address
+});
+
+myApp.config(function ($mdThemingProvider) {
+    $mdThemingProvider.theme('default');
+
 });

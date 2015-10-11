@@ -19,6 +19,7 @@
     "jquery.kyco.googleplusfeed2": "~2.1.1",
     "hover": "~2.0.2",
     "angular-route": "~1.4.7",
-    "angular-resource": "~1.4.7"
+    "angular-resource": "~1.4.7",
+    "angular-material": "master"
   }
 }
