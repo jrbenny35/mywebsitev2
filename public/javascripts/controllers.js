@@ -32,3 +32,11 @@ module.controller('LeftCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSide
     }
 
 }]);
+
+module.controller('RightNavCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
+
+    $scope.toggleSidenav = function () {
+        $mdSidenav('right').toggle();
+    }
+
+}]);

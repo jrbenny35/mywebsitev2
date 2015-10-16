@@ -18,8 +18,7 @@ myApp.config(function ($stateProvider, $locationProvider) {
         $stateProvider
             .state('/', {
                 url: '/',
-                templateUrl: 'partials/main',
-                controller: 'LeftCtrl'
+                templateUrl: 'partials/main'
             })
             .state('home',{
                 url: '/home',
@@ -60,6 +59,8 @@ myApp.factory('Contact', function($resource) {
 });
 
 myApp.config(function ($mdThemingProvider) {
-    $mdThemingProvider.theme('default');
+    $mdThemingProvider.theme('default')
+        .primaryPalette('blue')
+        .accentPalette('red');
 
 });

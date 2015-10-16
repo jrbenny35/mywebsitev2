@@ -1,27 +1,47 @@
-div#bigCallout(layout='column')
-  md-content
-    h1 Welcome!
-    p.lead
-      img(src='images/logo.png', alt='My Brand')
-      br
-      | This is the my simple website. I hope you enjoy!
-    p
-      a.btn.btn-lg.btn-success.btn-material-teal-400(ui-sref='about') About Me
-        span.glyphicon.glyphicon-hand-left
-div(layout='row')
-  md-content
-    h2 Site contents
-      h4 My Resume1111111111111111111111111111
+div#main(layout='column')
+  div#bigCallout(layout='column' layout-align='center center' layout-padding)
+    md-content(layout-padding)
+      h1 Welcome!
       p
-        | You will find a link to the left, or a link above (if you are on mobile) to view and or download my resume.
-      h4 About Me
-      p
-        | A simple bio as well as links for social media!
-      h4 Projects
-      p Interested in seeing what I am up to? Check out the projects tab!
-  div(flex hide-sm hide-md)
-    md-content(style="text-align: center;")
-      h1
-        | Stay In touch
-      p
-        a.btn.btn-secondary.btn-raised.btn-material-teal-400.hvr-grow(ui-sref='contact') Contact
+        img(src='images/logo.png', alt='My Brand')
+        br
+        | This is the my simple website. I hope you enjoy!
+    md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='about') About
+  div(layout-gt-md='row' layout-align='center' layout-margin)
+    div(flex class='main-card')
+      md-content
+        md-card.md-padding
+          md-card-content
+            h2 Site contents
+            h4 My Resume
+            p
+              | You will find a link to the left, or a link above (if you are on mobile) to view and or download my resume.
+            h4 About Me
+            p
+              | A simple bio as well as links for social media!
+            h4 Projects
+            p Interested in seeing what I am up to? Check out the projects tab!
+          div(layout='row', class='', layout-align='end center')
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 1
+    div(flex class='main-card')
+      md-content
+        md-card.md-padding
+          md-card-content
+            h2
+              | Stay In touch
+            p.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh ut risus rhoncus elementum. Sed scelerisque libero ac ex mattis, eu accumsan lectus finibus. Sed in sollicitudin magna. Aliquam interdum volutpat accumsan.
+
+          div(layout='row', class='', layout-align='center end')
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='contact') Contact
+    div(flex class='main-card')
+      md-content
+        md-card.md-padding
+          md-card-content
+            h2 Card 3
+            p.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh ut risus rhoncus elementum. Sed scelerisque libero ac ex mattis, eu accumsan lectus finibus.
+
+          div(layout='row', class='', layout-align='end center')
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 1
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 2

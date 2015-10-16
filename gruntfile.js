@@ -10,9 +10,12 @@ module.exports = function(grunt){
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             index: {
+                options:{
+                    style: 'expanded',
+                    noCache: true
+                },
                 files: {
-                    'public/dist/stylesheets/main.css': 'public/stylesheets/main.scss',
-                    'public/dist/stylesheets/angularMaterialStyles.css': 'public/stylesheets/angularMaterialStyles.sass'
+                    'public/dist/stylesheets/main.css': 'public/stylesheets/main.scss'
 
                 }
             }
@@ -20,7 +23,7 @@ module.exports = function(grunt){
         watch:{
             css: {
                 files: '**/*.scss',
-                tasks: ['sass']
+                tasks: ['build']
             }
         },
         cssmin: {
