@@ -69,9 +69,6 @@ html, body{
   border-top: 1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
 
 /* Main marketing message and sign up button */
 .jumbotron {
@@ -123,9 +120,9 @@ html, body{
 
 }
 
-//hr{
-  //border-bottom: 1px solid #00bcd4 !important; //material-teal-500
-//}
+hr{
+  border-bottom: 1px solid #00bcd4 !important; //material-teal-500
+}
 
 #inTouch{
   text-align: center;
@@ -252,3 +249,15 @@ html, body{
 //.hvr-glow:hover{
   //box-shadow: 0 0 10px;
 //}
+
+#about{
+  .md-card-image{
+    margin: auto;
+    height: 100px;
+    width: auto;
+  }
+
+  h1{
+    text-align: center;
+  }
+}
