@@ -4,27 +4,35 @@
   h1 Contact me
   hr
   h3 Please fill out this contact form below
-  form(ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
-    .form-group
-      label.control-label(for = "Name") Name
-      input.form-control(type = "text", ng-model = "contact.name", placeholder = "Your name here", required)
-    .form-group
-      label.control-label(for = "Email") Email
-      input.form-control(type = "email", ng-model = "contact.email", placeholder = "Your email address here", required)
-    .form-group
-      label.control-label(for = "Message") Message
-      input.form-control(type = "text", ng-model = "contact.message", placeholder = "Spill your heart out here")
-    input.btn.btn-primary(type = "submit" value= "Send")
+  form( name='contactForm' ng-controller="ContactCtrl", role="form" ng-submit="saveContact()")
+    md-content.md-padding
+      md-input-container
+        label Name
+        input(md-maxlength='30' required name='Enter Your Name' ng-model='contact.name' )
+        div(ng-messages='contactForm.name.$error')
+          div(ng-message='required') This is required
+          div(ng-message='md-maxlength') Name must be less than 30 characters long
+      md-input-container
+        label Email
+        input(minlength='10' maxlength='100' required name='Enter Your Email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' )
+        div(ng-messages='contactForm.email.$error' role='alert')
+          div(ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']") Invalid email
+      md-input-container
+        label Message
+        input(md-maxlength='300' name='Message here' ng-model='contact.message' )
+        div(ng-messages='contactForm.message.$error')
+          div(ng-message='md-maxlength') Message is limited to 300 characters
+      input.btn.btn-primary(type = "submit" value= "Send")
   br
   h1 Reach out to me here if you wish
   hr
-  .container-fluid
-    .row
-      .col-lg-6
+  md-content
+    div(layout='row')
+      div.md-padding
         h3 Linked in
         a(href="http://linkedin.com/in/benjaminforehandjr", target="_blank")
           img(src="images/CBpFkPaz.png", style="width: auto; height: 200px", alt="linked in")
-      .col-lg-6
+      div.md-padding
         h3 Github
         a(href="http://github.com/jrbenny35", target="_blank")
           img(src="images/github-mark@1200x630.png", style="width: auto; height: 200px", alt="github img")

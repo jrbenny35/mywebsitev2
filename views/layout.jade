@@ -13,15 +13,15 @@ html
     link(rel='stylesheet', href='/javascripts/vendor/angular-material/angular-material.css')
     //link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/ripples.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
-    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     //link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material-fullpalette.css')
     link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href="/")
   body(ng-app='webApp', layout="row")
-    md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')")
-      md-toolbar.md-whiteframe-z1
-        h2(style="margin: auto;") Navigation
+    md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')" layout='column')
+      md-toolbar.md-whiteframe-z1.body-toolbar
+        div(layout-align='center end' style='padding-top: 85px;' layout='row')
+          h2 Navigation
       md-list
         md-list-item
           md-button(ui-sref='home' flex='')
@@ -40,7 +40,7 @@ html
             h3 Projects
     .md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
       md-toolbar.md-whiteframe-z1(layout='row')
-        md-button(hide-gt-sm='', aria-label='Show User List', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
+        md-button(hide-gt-sm='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
           md-icon(md-svg-icon='images/angular-material/menu.svg')
         span(flex='')
         h2 BennyJr
@@ -50,6 +50,9 @@ html
 
       md-content.md-padding(ui-view='')
     md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
+      md-toolbar.md-whiteframe-z1.body-toolbar
+        div(layout-align='center end' style='padding-top: 85px;' layout='row')
+          h2 Social Media
       div(flex='' layout='row')
         md-tabs.md-dynamic-height.md-border-bottom(md-no-pagination='true' flex)
           md-tab(label='Twitter')
