@@ -40,3 +40,28 @@ module.controller('RightNavCtrl', ['$scope', '$mdSidenav', function ($scope, $md
     }
 
 }]);
+
+module.controller('ResumeCtrl', ['$scope', '$mdDialog', function ($scope, $mdDialog) {
+
+    $scope.showDialog = function (ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'partials/resumeDialog',
+            parent:
+                angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+        })
+    };
+
+}]);
+
+function DialogController($scope, $mdDialog){
+    $scope.hide = function () {
+        $mdDialog.hide();
+    };
+
+    $scope.cancel = function () {
+        $mdDialog.cancel();
+    };
+}

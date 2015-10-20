@@ -9,7 +9,8 @@ var myApp = angular.module('webApp', [
     'ngAnimate',
     'controllers',
     'ngResource',
-    'ngMaterial'
+    'ngMaterial',
+    'ngMessages'
 
     ]);
 myApp.config(function ($stateProvider, $locationProvider) {

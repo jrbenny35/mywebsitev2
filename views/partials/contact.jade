@@ -8,26 +8,31 @@
     md-content.md-padding
       md-input-container
         label Name
-        input(md-maxlength='30' required name='Enter Your Name' ng-model='contact.name' )
-        div(ng-messages='contactForm.name.$error')
-          div(ng-message='required') This is required
-          div(ng-message='md-maxlength') Name must be less than 30 characters long
+        input(type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
+        div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
+          p(ng-message='required') This is required
+          p(ng-message='maxlength') Name must be less than 30 characters long
+          p(ng-message='minlength') Name must be at least 3 characters long
+      br
       md-input-container
         label Email
-        input(minlength='10' maxlength='100' required name='Enter Your Email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' )
-        div(ng-messages='contactForm.email.$error' role='alert')
-          div(ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']") Invalid email
+        input(minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
+        div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
+          p(ng-message='required') An email address is required
+          p(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
+      br
       md-input-container
         label Message
-        input(md-maxlength='300' name='Message here' ng-model='contact.message' )
-        div(ng-messages='contactForm.message.$error')
-          div(ng-message='md-maxlength') Message is limited to 300 characters
-      input.btn.btn-primary(type = "submit" value= "Send")
+        input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
+        div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
+          p(ng-message='maxlength') Message is limited to 300 characters
+      br
+      md-button.md-raised.md-primary.md-hue-2.hvr-grow(type = "submit" ng-disabled='contactForm.$invalid') Submit
   br
   h1 Reach out to me here if you wish
   hr
   md-content
-    div(layout='row')
+    div(layout='row' layout-align='center start')
       div.md-padding
         h3 Linked in
         a(href="http://linkedin.com/in/benjaminforehandjr", target="_blank")
