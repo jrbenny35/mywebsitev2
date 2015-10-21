@@ -15,6 +15,10 @@ html, body{
 
 }
 
+h1{
+  color: #ec407a;
+}
+
 #bodyContainer{
   background-color: white;
   margin: 2rem;
@@ -144,13 +148,12 @@ hr{
 }
 
 #main{
-
-
-
-
   .main-card{
-      max-width: 30rem;
+    max-width: 30rem;
+  }
 
+  md-card{
+    overflow: hidden;
   }
 }
 
@@ -265,4 +268,12 @@ hr{
   .md-card{
 
   }
+}
+
+#projects{
+  .md-card-image{
+    width: auto;
+    height: 150px;
+  }
+
 }

@@ -1,15 +1,15 @@
 //
    Created by root on 9/25/15.
 div(ng-controller='ResumeCtrl')
-  md-content
-  h1 Resume
-  hr
-  p I have provided view and download links to my resume
+  md-content.md-padding
+    h1 Resume
+    hr
+    p I have provided view and download links to my resume
 
-  p View
-  md-button.md-primary.md-raised.md-hue-2(ng-click='showDialog($event)' flex) My Resume
-  p Download
-  md-button.md-primary.md-raised.md-hue-2(flex target="_blank" href="/public/misc/Benjamin_Forehand_Resume_2015.docx" download="Benjamin_Forehand_Jr_Resume_2015.docx") Click Here
+    p View
+    md-button.md-primary.md-raised.md-hue-2.hvr-grow(ng-click='showDialog($event)' flex) My Resume
+    p Download
+    md-button.md-primary.md-raised.md-hue-2.hvr-grow(flex target="_blank" href="/public/misc/Benjamin_Forehand_Resume_2015.docx" download="Benjamin_Forehand_Jr_Resume_2015.docx") Click Here
 
 
 
