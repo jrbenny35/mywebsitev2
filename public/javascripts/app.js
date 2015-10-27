@@ -10,7 +10,8 @@ var myApp = angular.module('webApp', [
     'controllers',
     'ngResource',
     'ngMaterial',
-    'ngMessages'
+    'ngMessages',
+    'ngMdIcons'
 
     ]);
 myApp.config(function ($stateProvider, $locationProvider) {
@@ -19,10 +20,6 @@ myApp.config(function ($stateProvider, $locationProvider) {
         $stateProvider
             .state('/', {
                 url: '/',
-                templateUrl: 'partials/main'
-            })
-            .state('home',{
-                url: '/home',
                 templateUrl: 'partials/main'
             })
             .state('about',{
@@ -62,6 +59,6 @@ myApp.factory('Contact', function($resource) {
 myApp.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('blue')
-        .accentPalette('red');
+        .accentPalette('pink');
 
 });

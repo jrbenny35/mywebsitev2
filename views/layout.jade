@@ -16,7 +16,7 @@ html
     //link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material-fullpalette.css')
     link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
-    base(href="/home")
+    base(href="/")
   body(ng-app='webApp', layout="row")
     md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')" layout='column')
       md-toolbar.md-whiteframe-z1.body-toolbar
@@ -24,19 +24,19 @@ html
           h2 Navigation
       md-list
         md-list-item
-          md-button(ui-sref='home' flex='')
+          md-button(ui-sref='/' flex='' ui-sref-active='active')
             h3 Home
         md-list-item
-          md-button(ui-sref='about' flex='')
+          md-button(ui-sref='about' flex='' ui-sref-active='active')
             h3 About
         md-list-item
-          md-button(ui-sref='contact' flex='')
+          md-button(ui-sref='contact' flex='' ui-sref-active='active')
             h3 Contact
         md-list-item
-          md-button(ui-sref='resume' flex='')
+          md-button(ui-sref='resume' flex='' ui-sref-active='active')
             h3 Resume
         md-list-item
-          md-button(ui-sref='projects' flex='')
+          md-button(ui-sref='projects' flex='' ui-sref-active='active')
             h3 Projects
     .md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
       md-toolbar.md-whiteframe-z1(layout='row')
@@ -45,8 +45,8 @@ html
         span(flex='')
         h2 BennyJr
         span(flex='')
-        md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()')
-          md-icon(md-svg-icon='images/angular-material/menu.svg')
+        md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 5px')
+          ng-md-icon(icon="people" style="fill: white" size="42")
 
       md-content.md-padding(ui-view='')
     md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
@@ -57,15 +57,13 @@ html
         md-tabs.md-dynamic-height.md-border-bottom(md-no-pagination='true' flex)
           md-tab(label='Twitter')
             md-content.md-padding
-              h4.md-display-2 Tweetverse
+              p Tweetverse
               p
                 a.twitter-timeline(href='https://twitter.com/bigbenjr135', data-widget-id='648968585075933184') Tweets by @bigbenjr135
           md-tab(label='Google+')
             md-content.md-padding
-              h4.md-display-2 Add me!
+              p Google Plus
               .gplus2
-
-
 
     script(type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular/angular.js')

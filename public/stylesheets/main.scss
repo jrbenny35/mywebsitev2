@@ -10,14 +10,32 @@
 }
 
 html, body{
-  font-family: 'Roboto', serif;
   font-size: 18px;
 
 }
 
 h1{
-  color: #ec407a;
+  color: #f50057;
 }
+
+.active, .active:focus, .active:hover{
+  background-color: #f50057 !important;
+  color: white !important;
+}
+
+#main, #projects {
+  md-card {
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+  }
+
+  md-card:hover {
+    box-shadow: 0 5px 2px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
 
 #bodyContainer{
   background-color: white;
@@ -183,6 +201,17 @@ hr{
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 8rem;
+  min-height: 650px;
+
+
+  .callout-content{
+    background-color: transparent;
+
+    p{
+      color: white;
+      font-size: 35px;
+    }
+  }
 }
 
 #table{
@@ -249,20 +278,12 @@ hr{
   line-height: 18px;
 }
 
-/* --------- Custom Hover Styles ---------*/
-//.hvr-glow:hover{
-  //box-shadow: 0 0 10px;
-//}
 
 #about{
   .md-card-image{
     margin: auto;
     height: 100px;
     width: auto;
-  }
-
-  h1{
-    text-align: center;
   }
 
   .md-card{
@@ -275,5 +296,17 @@ hr{
     width: auto;
     height: 150px;
   }
+
+}
+
+.md-sidenav-right{
+  width: 350px !important;
+  min-width: 350px !important;
+}
+
+
+.kyco_googleplusfeed .feed_profile_image{
+  width: 75px !important;
+  height: 75px !important;
 
 }

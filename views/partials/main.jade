@@ -1,12 +1,11 @@
 div#main(layout='column')
   div#bigCallout(layout='column' layout-align='center center' layout-padding)
-    md-content(layout-padding)
+    md-content.callout-content(layout-padding)
       h1 Welcome!
       p
         img(src='images/logo.png', alt='My Brand')
-        br
-        | This is the my simple website. I hope you enjoy!
-    md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='about') About
+        p This is the my simple website. I hope you enjoy!
+      md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='about') About
   div(layout-gt-md='row' layout-align='center' layout-margin)
     div(flex class='main-card')
       md-content
