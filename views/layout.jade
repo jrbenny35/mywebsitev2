@@ -11,64 +11,62 @@ html
     meta(name='viewport', content="initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic')
     link(rel='stylesheet', href='/javascripts/vendor/angular-material/angular-material.css')
-    //link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/ripples.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
-    //link(rel='stylesheet', href='/javascripts/vendor/bootstrap-material-design/dist/css/material-fullpalette.css')
     link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href="/")
-  body(ng-app='webApp', layout="row")
-    md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')" layout='column')
-      md-toolbar.md-whiteframe-z1.body-toolbar
-        div(layout-align='center end' style='padding-top: 85px;' layout='row')
-          h2 Navigation
-      md-list
-        md-list-item
-          md-button(ui-sref='/' flex='' ui-sref-active='active')
-            h3 Home
-        md-list-item
-          md-button(ui-sref='about' flex='' ui-sref-active='active')
-            h3 About
-        md-list-item
-          md-button(ui-sref='contact' flex='' ui-sref-active='active')
-            h3 Contact
-        md-list-item
-          md-button(ui-sref='resume' flex='' ui-sref-active='active')
-            h3 Resume
-        md-list-item
-          md-button(ui-sref='projects' flex='' ui-sref-active='active')
-            h3 Projects
-    .md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
-      md-toolbar.md-whiteframe-z1(layout='row')
-        md-button(hide-gt-sm='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
-          md-icon(md-svg-icon='images/angular-material/menu.svg')
-        span(flex='')
-        h2 BennyJr
-        span(flex='')
-        md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 5px')
-          ng-md-icon(icon="people" style="fill: white" size="42")
+  body(ng-app='webApp', layout="column")
+    div(layout='row')
+      md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-sm')" layout='column')
+        md-toolbar.md-whiteframe-z1.body-toolbar
+          div(layout-align='center end' style='padding-top: 85px;' layout='row')
+            h2 Ben Forehand
+        md-list(ng-controller="LeftCtrl")
+          md-list-item
+            md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
+              h3 Home
+          md-list-item
+            md-button.md-button(ui-sref='resume' flex='' ui-sref-active='active')
+              h3 Resume
+          md-list-item
+            md-button.md-button(ui-sref='projects' flex='' ui-sref-active='active')
+              h3 Projects
+          md-list-item
+            md-button.md-button(ui-sref='about' flex='' ui-sref-active='active')
+              h3 About
+          md-list-item
+            md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active')
+              h3 Contact
+      div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
+        md-toolbar.md-whiteframe-z1(layout='row')
+          md-button#leftToggle(hide-gt-sm='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
+            md-icon(md-svg-icon='images/angular-material/menu.svg')
+          span(flex='')
+          span(flex='')
+          md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 5px')
+            ng-md-icon(icon="people" style="fill: white" size="30")
+        md-content.md-padding(ui-view='')
 
-      md-content.md-padding(ui-view='')
-    md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
-      md-toolbar.md-whiteframe-z1.body-toolbar
-        div(layout-align='center end' style='padding-top: 85px;' layout='row')
-          h2 Social Media
-      div(flex='' layout='row')
-        md-tabs.md-dynamic-height.md-border-bottom(md-no-pagination='true' flex)
-          md-tab(label='Twitter')
-            md-content.md-padding
-              p Tweetverse
-              p
-                a.twitter-timeline(href='https://twitter.com/bigbenjr135', data-widget-id='648968585075933184') Tweets by @bigbenjr135
-          md-tab(label='Google+')
-            md-content.md-padding
-              p Google Plus
-              .gplus2
+      md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
+        md-toolbar.md-whiteframe-z1.body-toolbar
+          div(layout-align='center end' style='padding-top: 85px;' layout='row')
+            h2 Social Media
+        div(flex='' layout='row')
+          md-tabs.md-dynamic-height.md-border-bottom(md-no-pagination='true' flex)
+            md-tab(label='Twitter')
+              md-content.md-padding
+                p Tweetverse
+                p
+                  a.twitter-timeline(href='https://twitter.com/bigbenjr135', data-widget-id='648968585075933184') Tweets by @bigbenjr135
+            md-tab(label='Google+')
+              md-content.md-padding
+                p Google Plus
+                .gplus2
+
 
     script(type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular/angular.js')
     script(type='text/javascript' src='/javascripts/vendor/angular-messages/angular-messages.min.js')
-    //script(type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-resource/angular-resource.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-animate/angular-animate.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-aria/angular-aria.min.js')

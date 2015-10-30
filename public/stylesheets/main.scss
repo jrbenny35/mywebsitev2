@@ -11,6 +11,7 @@
 
 html, body{
   font-size: 18px;
+  background-color: #e5e5e5;
 
 }
 
@@ -34,8 +35,30 @@ h1{
   md-card:hover {
     box-shadow: 0 5px 2px 1px rgba(0, 0, 0, 0.5);
   }
+
 }
 
+#main{
+  .md-card-image{
+    margin: auto;
+    max-height: 125px;
+    min-height: 125px;
+  }
+
+  .md-card-content{
+    min-height: 250px;
+    max-height: 250px;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  md-card{
+    max-height: 450px;
+  }
+
+}
 
 #bodyContainer{
   background-color: white;
@@ -196,7 +219,7 @@ hr{
 
 #bigCallout{
   text-align: center;
-  background-image: url("/images/04-3.jpg");
+  background-image: url("/images/black-and-white-city-skyline-buildings.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -211,6 +234,7 @@ hr{
       color: white;
       font-size: 35px;
     }
+
   }
 }
 
