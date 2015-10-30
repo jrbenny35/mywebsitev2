@@ -29,6 +29,11 @@ module.controller('LeftCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSide
 
     $scope.toggleSidenav = function () {
         $mdSidenav('left').toggle();
+    };
+
+
+    $scope.close = function () {
+      $mdSidenav('left').close();
     }
 
 }]);

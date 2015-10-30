@@ -9,9 +9,9 @@ p Check out what I'm up to!
 div#projects(layout-gt-md='row')
   div(flex class='projects-card' ng-controller="ProjectsCtrl" ng-repeat= "project in projects")
     md-content.md-padding
-      md-card
+      md-card.md-card
         img.md-card-image(src="images/yeoman.png", alt="Document image" style='margin: auto;')
-        md-card-content
+        md-card-content.md-card-content
           h4 {{ project.title }}
           p.
             {{ project.description }}

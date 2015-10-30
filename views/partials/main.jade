@@ -11,24 +11,22 @@ div#main(layout='column')
       md-content
         md-card.md-padding
           img.md-card-image(src='images/logo.png')
-          md-card-content
+          md-card-content.md-card-content
             hr
-            h2 Site contents
-            h4 Resume
-            h4 Bio
-            h4 Contact form
+            h2 Resume
+            p Take a look at the awesomeness that is my resume! A view and download link is available as well.
           div(layout='row', class='', layout-align='end end')
-            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 1
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='resume') Resume
     div(flex class='main-card')
       md-content
         md-card.md-padding
           img.md-card-image(src='images/logo.png')
-          md-card-content
+          md-card-content.md-card-content
             hr
             h2
               | Stay In touch
             p.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh ut risus rhoncus elementum. Sed scelerisque libero ac ex mattis, eu accumsan lectus finibus.
+              A short form requiring just your name and email address and a short message for me to contact you regarding whatever you wish.
 
           div(layout='row', class='', layout-align='end end')
             md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='contact') Contact
@@ -36,12 +34,10 @@ div#main(layout='column')
       md-content
         md-card.md-padding
           img.md-card-image(src='images/logo.png')
-          md-card-content
+          md-card-content.md-card-content
             hr
-            h2 Card 3
+            h2 Recent Projects
             p.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh ut risus rhoncus elementum. Sed scelerisque libero ac ex mattis, eu accumsan lectus finibus.
-
+              Come and check out my recent projects as well as all the source code for this amazing website!
           div(layout='row', class='', layout-align='end end')
-            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 1
-            md-button.md-raised.md-primary.md-hue-2.hvr-grow() Action 2
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='projects') Projects
