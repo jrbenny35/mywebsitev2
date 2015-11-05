@@ -11,7 +11,6 @@
 
 html, body{
   font-size: 18px;
-  background-color: #e5e5e5;
 
 }
 
@@ -333,4 +332,17 @@ hr{
   width: 75px !important;
   height: 75px !important;
 
+}
+
+.projects-detail-card{
+  h2{
+    color: #ec407a; 
+  }
+  
+  img{
+    margin: auto;
+    width: auto;
+    min-height: 200px;
+    max-height: 250px;
+  }
 }

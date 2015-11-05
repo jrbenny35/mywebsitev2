@@ -4,8 +4,8 @@ md-dialog(ng-cloak aria-label='Resume' style='min-width: 50%; max-height: 810px;
     div(class='md-toolbar-tools')
       h2 Benjamin Forehand Jr Resume
       span(flex)
-      md-button(class='md-icon-button' ng-click='cancel()')
-        md-icon(md-svg-src='images/angular-material/menu.svg' aria-label='Close dialog')
+      md-button(style='padding-top: 15px;' ng-click='cancel()')
+        ng-md-icon(icon="clear" style="fill: white;" size="30")
   md-dialog-content()
     div(class='md-dialog-content')
       h2 Resume
