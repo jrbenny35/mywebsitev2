@@ -23,6 +23,16 @@ router.get('/projects', function(req, res){
    });
 });
 
+router.get('/projects/:id', function (req, res) {
+   return models.projects.findById(req.params.id, function (err, projects) {
+      if (!err) {
+         return res.send(projects);
+      } else {
+         return console.log(err);
+      }
+   });
+
+});
 
 router.post('/contact', function(req, res){
 

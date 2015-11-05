@@ -42,6 +42,11 @@ myApp.config(function ($stateProvider, $locationProvider) {
             .state('resume',{
                 url: '/resume',
                 templateUrl: 'partials/resume'
+            })
+            .state('projectView',{
+                url: '/projects/:id/view',
+                templateUrl: 'partials/projectDetail',
+                controller: 'ProjectViewCtrl'
             });
 
         $locationProvider.html5Mode(true);
@@ -49,11 +54,11 @@ myApp.config(function ($stateProvider, $locationProvider) {
 
 //Resources
 myApp.factory('Projects', function($resource) {
-    return $resource('/api/projects/:id'); //full endpoint address
+    return $resource('/api/projects/:id', { id: '@_id' }); //full endpoint address
 });
 
 myApp.factory('Contact', function($resource) {
-    return $resource('/api/contact/:id'); //full endpoint address
+    return $resource('/api/contact/:id', { id: '@_id' }); //full endpoint address
 });
 
 myApp.config(function ($mdThemingProvider) {

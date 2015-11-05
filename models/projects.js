@@ -20,6 +20,11 @@ var projectsSchema = new Schema({
         require: true
     },
 
+    detailDescription:{
+        type: String,
+        required: false
+    },
+
     updated_On:{
         type: String,
         require: true
@@ -28,6 +33,11 @@ var projectsSchema = new Schema({
     link:{
         type: String,
         require: true
+    },
+
+    image:{
+      type: String,
+      require: false
     }
 });
 

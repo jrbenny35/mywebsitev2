@@ -7,7 +7,7 @@ p Check out what I'm up to!
 
 
 div#projects(layout-gt-md='row')
-  div(flex class='projects-card' ng-controller="ProjectsCtrl" ng-repeat= "project in projects")
+  div(flex class='projects-card' ng-repeat= "project in projects")
     md-content.md-padding
       md-card.md-card
         img.md-card-image(src="images/yeoman.png", alt="Document image" style='margin: auto;')
@@ -19,7 +19,7 @@ div#projects(layout-gt-md='row')
             span Updated on: {{ project.updated_On }}
           br
           div(layout='row' layout-align='start end')
-            md-button.md-raised.md-primary.md-hue-2.hvr-grow(href="{{ project.link }}", role= "button") View
+            md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='projectView({id:project._id})', role= "button") View
 
 
 

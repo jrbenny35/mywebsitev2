@@ -12,6 +12,12 @@ module.controller('ProjectsCtrl', ['$scope', 'Projects', function ($scope, Proje
 
 }]);
 
+module.controller('ProjectViewCtrl', ['$scope', 'Projects', '$stateParams', function ($scope, Projects, $stateParams ) {
+
+    $scope.projects = Projects.get({ id: $stateParams.id });
+
+}]);
+
 module.controller('ContactCtrl', ['$scope', 'Contact', '$http', '$state', function ($scope, Contact, $http, $state) {
 
 
