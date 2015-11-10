@@ -12,7 +12,7 @@ describe('My Website Tests', function() {
     });
 
 
-    /*-------------------------------------------------------------------
+    /*-------------------------------------------------------------------*/
     //Test Nav Links load correct url
 
     it('should load navigation links', function () {
@@ -51,7 +51,7 @@ describe('My Website Tests', function() {
     });
 
 
-    /*-------------------------------------------------------------------
+    /*-------------------------------------------------------------------*/
     //Load first link on main partial
     it('should load links on main page to correct url', function () {
         element(by.id('bigCallout')).all(by.css('.md-raised'))
@@ -81,7 +81,7 @@ describe('My Website Tests', function() {
         expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/projects');
     });
 
-    /*-------------------------------------------------------------------
+    /*-------------------------------------------------------------------*/
     //Check if projects load
     it('should load projects', function () {
          element(by.id('main')).all(by.css('.md-raised'))
@@ -92,7 +92,7 @@ describe('My Website Tests', function() {
     });
 
 
-    /*-------------------------------------------------------------------
+    /*-------------------------------------------------------------------*/
     //Check form sends and changes Url
     it('should allow form input', function () {
          element(by.id('main')).all(by.css('.md-raised'))
@@ -123,8 +123,8 @@ describe('My Website Tests', function() {
             ' Not the kind to get in trouble with the law, but one that loves seeing things broken down and raw. ' +
             'Nothing is better to me than seeing the guts of a V12 Formula 1 engine, the raw steel that forms a skyscraper, or the simple words in a document of my next million dollar Java class!' +
             ' Yes, I am a fiend for design and engineering!');
-
     });
+
 
 
 });
