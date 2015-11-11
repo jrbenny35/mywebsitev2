@@ -6,6 +6,9 @@ services:
 before_install:
 - npm install -g bower
 - npm install -g protractor@2.5.1
+- apt-get install ruby-full
+- gem install compass --version ="1.0.3"
+- gem install sass --version ="3.4.18"
 install:
 - npm install
 - bower install
