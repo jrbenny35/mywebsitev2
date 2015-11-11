@@ -6,7 +6,6 @@ services:
 before_install:
 - npm install -g bower
 - npm install -g protractor
-- npm install selenium-webdriver@2.47.0
 install:
 - npm install
 - bower install
