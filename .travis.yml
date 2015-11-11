@@ -6,7 +6,7 @@ before_script:
 - sleep 5
 - "selenium-standalone install &"
 - sleep 5
-- "selenium-standalone start"
+- "selenium-standalone start &"
 deploy:
   provider: heroku
   api_key:
