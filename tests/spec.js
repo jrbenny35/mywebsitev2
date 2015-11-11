@@ -1,6 +1,6 @@
 describe('My Website Tests', function() {
 
-    var numberOfProjects = 3;
+    var numberOfProjects = 0;
 
     beforeEach(function () {
         browser.get('http://localhost:3000');
