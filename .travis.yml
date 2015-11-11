@@ -2,7 +2,11 @@ language: node_js
 node_js:
 - 0.12.7
 before_script:
-  node app.js & npm installserver & npm startserver &
+- "node app.js &"
+- sleep 5
+- "selenium-standalone install &"
+- sleep 5
+- "selenium-standalone start"
 deploy:
   provider: heroku
   api_key:
