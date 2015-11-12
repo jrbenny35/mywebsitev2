@@ -8,6 +8,7 @@ var compass = require('node-compass');
 var http = require('http');
 var mongoose = require('mongoose');
 var _ = require('lodash');
+var mongoLocal = ("mongodb://localhost/MyMeanWebsite");
 
 
 var app = express();
@@ -26,9 +27,6 @@ app.use(compass());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('port', process.env.PORT || '3000');
 
-
-//app.use('/', routes);
-
 //Add CORS
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -38,15 +36,16 @@ app.use(function (req, res, next) {
 });
 
 app.use(require('./routes'));
-mongoose.connect('mongodb://localhost/MyMeanWebsite');
-mongoose.connection.once('open', function(){
 
+mongoose.connect(process.env.MONGOLAB_URI || mongoLocal, function (error) {
+  if (error) console.error(error);
+  else console.log('mongo connected');
+});
+mongoose.connection.once('open', function(){
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port: ' + app.get('port'));
   });
-
-
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
@@ -79,8 +78,6 @@ http.createServer(app).listen(app.get('port'), function(){
     });
   });
 
-
 });//end mongodb connection
-
 
 module.exports = app;
