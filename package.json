@@ -3,10 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production nodemon app.js",
-    "test": "./node_modules/.bin/protractor tests/conf.js",
-    "installserver": "selenium-standalone install",
-    "startserver": "selenium-standalone start"
+    "start": "NODE_ENV=production node app.js",
+    "test": "./node_modules/protractor/bin/protractor tests/conf.js"
   },
   "dependencies": {
     "angular-material": "^0.11.2",
