@@ -15,6 +15,7 @@ install:
 - ./node_modules/protractor/bin/webdriver-manager update --standalone
 - ./node_modules/protractor/bin/webdriver-manager start --standalone &
 before_script:
+- npm install grunt-cli -g
 - npm start &
 - sleep 5
 - export DISPLAY=:99.0
