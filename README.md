@@ -7,13 +7,13 @@ This is an implementation of my previous website, now using the MEAN stack!
 The idea for this website is to accomplish these goals:
 - Establish a Web Presence 
 - Showcase current work and skills
-- Allow for another for of contact
+- Allow for another form of contact
 
 #### Version
 2.0
 
 #### Links
-* [Homepage](http://bennyjr.xyz): My masterpiece
+* [Homepage](http://bennyjr.xyz): My masterpiece!
 
 
 ### Now on to the good stuff
