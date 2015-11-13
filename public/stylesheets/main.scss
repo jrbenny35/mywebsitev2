@@ -11,7 +11,8 @@
 
 html, body{
   font-size: 18px;
-
+  position: fixed;
+  width: 100%;
 }
 
 h1{
@@ -188,10 +189,6 @@ hr{
 }
 
 #main{
-  .main-card{
-    max-width: 30rem;
-  }
-
   md-card{
     overflow: hidden;
   }
@@ -345,4 +342,12 @@ hr{
     min-height: 200px;
     max-height: 250px;
   }
+}
+
+#mainView{
+  max-height: 1000px;
+  min-height: 1000px;
+  width: 100%;
+  overflow: scroll;
+  padding-bottom: 250px;
 }
