@@ -10,7 +10,7 @@ div#contact
         md-card-content
           md-input-container(flex)
             label Name
-            input(type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
+            input(flex type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
             div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
               p(ng-message='required') This is required
               p(ng-message='maxlength') Name must be less than 30 characters long
@@ -18,14 +18,14 @@ div#contact
           br
           md-input-container(flex)
             label Email
-            input(minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
+            input(flex minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
             div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
               p(ng-message='required') An email address is required
               p(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
           br
           md-input-container(flex)
             label Message
-            input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
+            input(flex type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
             div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
               p(ng-message='maxlength') Message is limited to 300 characters
           br
