@@ -125,6 +125,35 @@ describe('My Website Tests', function() {
             ' Yes, I am a fiend for design and engineering!');
     });
 
+    it('should load pages at nav urls directly', function () {
+        browser.get('http://localhost:3000/projects');
+    var currentProjects = element.all(by.css('.md-card .md-card-content h4'));
+    expect(currentProjects.count()).toBe(numberOfProjects);
+    });
 
+    it('should load pages at nav urls directly', function () {
+        browser.get('http://localhost:3000/resume');
+        expect(element.all(by.tagName('p'))
+            .get(0)
+            .getText())
+            .toEqual('I have provided view and download links to my resume');
+    });
+
+    it('should load pages at nav urls directly', function () {
+        browser.get('http://localhost:3000/contact');
+        element(by.id('contact')).all(by.tagName('input'))
+            .get(0)
+            .sendKeys('Protractor Form Test');
+        element(by.tagName('form')).all(by.tagName('input'))
+            .get(1)
+            .sendKeys('protractor@test.com');
+        element(by.tagName('form')).all(by.tagName('input'))
+            .get(2)
+            .sendKeys('This is a test from protractor');
+        element(by.css('.md-raised')).click();
+        //Expect browser to load page on success
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
+
+    });
 
 });

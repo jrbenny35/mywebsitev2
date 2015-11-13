@@ -8,7 +8,7 @@ div#contact
     md-content
       md-card.md-padding
         md-card-content
-          md-input-container
+          md-input-container(flex)
             label Name
             input(type='text' ng-maxlength='30' ng-minlength='3' md-maxlength='30' name='name' ng-model='contact.name' required)
             div(ng-messages='contactForm.name.$error' ng-show='contactForm.name.$touched')
@@ -16,14 +16,14 @@ div#contact
               p(ng-message='maxlength') Name must be less than 30 characters long
               p(ng-message='minlength') Name must be at least 3 characters long
           br
-          md-input-container
+          md-input-container(flex)
             label Email
             input(minlength='10' maxlength='25' name='email' ng-model='contact.email' ng-pattern='/^.+@.+\..+$/' required)
             div(ng-messages='contactForm.email.$error' role='alert' ng-show='contactForm.email.$touched')
               p(ng-message='required') An email address is required
               p(ng-message-exp="['minlength', 'maxlength', 'pattern']") Invalid email
           br
-          md-input-container
+          md-input-container(flex)
             label Message
             input(type='text' ng-maxlength='300' md-maxlength='300' name='message' ng-model='contact.message' )
             div(ng-messages='contactForm.message.$error' ng-show='contactForm.message.$touched')
