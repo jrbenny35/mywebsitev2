@@ -5,7 +5,7 @@ div#main(layout='column')
       p
         img(src='images/logo.png', alt='My Brand')
         p This is the my simple website. I hope you enjoy!
-      md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='about') About
+        md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='about') About Me
   div(layout-gt-md='row' layout-align='center' layout-margin)
     div(flex class='main-card')
       md-content
@@ -15,7 +15,7 @@ div#main(layout='column')
             hr
             h2 Resume
             p Take a look at the awesomeness that is my resume! A view and download link is available as well.
-          div(layout='row', class='', layout-align='end end')
+          div.navButton(layout='row', class='', layout-align='end end')
             md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='resume') Resume
     div(flex class='main-card')
       md-content
@@ -27,8 +27,7 @@ div#main(layout='column')
               | Stay In touch
             p.
               A short form requiring just your name and email address and a short message for me to contact you regarding whatever you wish.
-
-          div(layout='row', class='', layout-align='end end')
+          div.navButton(layout='row', class='', layout-align='end end')
             md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='contact') Contact
     div(flex class='main-card')
       md-content
@@ -39,5 +38,5 @@ div#main(layout='column')
             h2 Recent Projects
             p.
               Come and check out my recent projects as well as all the source code for this amazing website!
-          div(layout='row', class='', layout-align='end end')
+          div.navButton(layout='row', class='', layout-align='end end')
             md-button.md-raised.md-primary.md-hue-2.hvr-grow(ui-sref='projects') Projects
