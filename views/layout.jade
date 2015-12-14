@@ -10,17 +10,23 @@ html
     meta(name='description', content='')
     meta(name='viewport', content="initial-scale=1, maximum-scale=1, user-scalable=no")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic')
-    link(rel='stylesheet', href='/javascripts/vendor/angular-material/angular-material.css')
+    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css')
     link(rel='stylesheet', href='/javascripts/vendor/hover/css/hover.css')
     link(rel='stylesheet', href='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.css')
     link(rel='stylesheet', href='/dist/stylesheets/main.min.css')
     base(href="/")
   body(ng-app='webApp', layout="column")
-    div(layout='row')
+    md-toolbar.md-whiteframe-z1(style='max-height: 15px;' layout='row')
+      md-button#leftToggle(hide-gt-md='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
+        md-icon(md-svg-icon='images/angular-material/menu.svg')
+      span(flex='')
+      span(flex='')
+      md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
+        ng-md-icon(icon="people" style="fill: white" size="30")
+    div#layout(layout='row')
       md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')" layout='column')
-        md-toolbar.md-whiteframe-z1.body-toolbar
-          div(layout-align='center end' style='padding-top: 85px;' layout='row')
-            h2 Ben Forehand Jr
+        md-toolbar.md-whiteframe-z1.body-toolbar.md-toolbar
+          span(flex='')
         md-list(ng-controller="LeftCtrl")
           md-list-item
             md-button.md-button(ui-sref='/' flex='' ui-sref-active='active' ng-click='close()')
@@ -38,17 +44,10 @@ html
             md-button.md-button(ui-sref='contact' flex='' ui-sref-active='active' ng-click='close()')
               h3 Contact
       div.md-whiteframe-z2(flex='', layout='column', tabindex='-1', role='main')
-        md-toolbar.md-whiteframe-z1(layout='row')
-          md-button#leftToggle(hide-gt-md='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
-            md-icon(md-svg-icon='images/angular-material/menu.svg')
-          span(flex='')
-          span(flex='')
-          md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
-            ng-md-icon(icon="people" style="fill: white" size="30")
         md-content.md-padding#mainView(ui-view='' flex)
 
       md-sidenav.md-sidenav-right.md-whiteframe-z2(md-component-id='right')
-        md-toolbar.md-whiteframe-z1.body-toolbar
+        md-toolbar.md-whiteframe-z1.body-toolbar.md-tall
           div(layout-align='center end' style='padding-top: 85px;' layout='row')
             h2 Social Media
         div(flex='' layout='row')
@@ -70,7 +69,7 @@ html
     script(type="text/javascript" src='/javascripts/vendor/angular-resource/angular-resource.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-animate/angular-animate.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-aria/angular-aria.min.js')
-    script(type="text/javascript" src='/javascripts/vendor/angular-material/angular-material.js')
+    script(type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.js')
     script(type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js')
     script(type="text/javascript" src='/javascripts/vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(type="text/javascript" src='/javascripts/vendor/jquery.kyco.googleplusfeed2/dist/jquery.kyco.googleplusfeed2.min.js')

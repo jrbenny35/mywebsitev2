@@ -15,10 +15,23 @@ html, body{
   width: 100%;
 }
 
-h1{
-  color: #f50057;
-}
+#layout {
+  .md-toolbar {
+    min-width: 128px;
+    min-height: 220px;
+    background-image: url('/images/mylogo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    //background-color: rgba(#000, .5);
+    background-color: white
+  }
+  h1 {
+    color: #f50057;
+  }
 
+
+}
 .active, .active:focus, .active:hover{
   background-color: #f50057 !important;
   color: white !important;
@@ -41,13 +54,11 @@ h1{
 #main{
   .md-card-image{
     margin: auto;
-    max-height: 125px;
-    min-height: 125px;
   }
 
   .md-card-content{
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 225px;
+    max-height: 225px;
   }
 
   h2{
@@ -56,8 +67,12 @@ h1{
 
   md-card{
     max-height: 450px;
+    overflow: hidden;
   }
 
+  h1 {
+    color: white;
+  }
 }
 
 #bodyContainer{
@@ -73,97 +88,6 @@ h1{
 .addMargin{
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-
-.navbar-brand,
-  img{
-    height: 5rem;
-    padding: .5rem;
-  padding-bottom: 1rem;
-
-  }
-
-
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  //margin: 40px 0;
-  padding-top: 1rem;
-  h2 {
-    color: #ec407a;
-    font-weight: 500;
-  }
-  h4 {
-    margin-top: 28px;
-    padding: 5px;
-    border-left: 2px solid #ec407a; //material-teal-500
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-
 }
 
 hr{
@@ -188,14 +112,6 @@ hr{
   }
 }
 
-#main{
-  md-card{
-    overflow: hidden;
-  }
-}
-
-
-
 /* ------------------------    Nav    -------------------- */
 
 #mainTitle{
@@ -215,20 +131,27 @@ hr{
 
 #bigCallout{
   text-align: center;
-  background-image: url("/images/black-and-white-city-skyline-buildings.jpg");
+  background-image: url("/images/snow-bench-man-person.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
   min-height: 650px;
 
 
   .callout-content{
-    background-color: transparent;
+    background-color: rgba(#000, .5);
+    width: 100%;
 
     p{
       color: white;
-      font-size: 35px;
+      font-size: 25px;
+    }
+
+    img{
+      height: 400px;
+      width: 350px;
+      background-color: transparent;
     }
 
   }
@@ -309,6 +232,7 @@ hr{
   .md-card{
 
   }
+
 }
 
 #projects{
