@@ -20,8 +20,9 @@ html
       md-button#leftToggle(hide-gt-md='', aria-label='Show Nav', ng-controller="LeftCtrl", ng-click='toggleSidenav()')
         md-icon(md-svg-icon='images/angular-material/menu.svg')
       span(flex='')
+      h2(hide-gt-sm='') Benny Jr
       span(flex='')
-      md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 12px')
+      md-button(aria-label='Show User List', ng-controller='RightNavCtrl', ng-click='toggleSidenav()' style='padding-top: 10px')
         ng-md-icon(icon="people" style="fill: white" size="30")
     div#layout(layout='row')
       md-sidenav.md-sidenav-left.md-whiteframe-z2(md-component-id='left', md-is-locked-open="$mdMedia('gt-md')" layout='column')
