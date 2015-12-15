@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 //var compass = require('node-compass');
 var http = require('http');
 var mongoose = require('mongoose');
-var _ = require('lodash');
+//var _ = require('lodash');
 var mongoLocal = ("mongodb://localhost/MyMeanWebsite");
 
 
