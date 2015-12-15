@@ -47,7 +47,7 @@ describe('My Website Tests', function() {
         element(by.css('.md-sidenav-left')).all(by.tagName('h3'))
             .get(4)
             .click();
-        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/');
+        expect(browser.getCurrentUrl()).toEqual('http://localhost:3000/contact');
     });
 
 
