@@ -1,5 +1,3 @@
-@import "projects";
-@import "form-control";
 @import "angularMaterialStyles";
 
 .browsehappy {
@@ -30,6 +28,7 @@ html, body{
     color: #f50057;
   }
 
+  max-width: 1650px;
 
 }
 .active, .active:focus, .active:hover{
@@ -68,10 +67,25 @@ html, body{
   md-card{
     max-height: 450px;
     overflow: hidden;
+    //max-width: 400px;
   }
 
   h1 {
     color: white;
+  }
+  md-card{
+    min-height: 31rem;
+    max-height: 31rem;
+  }
+  .md-card-image {
+    width: auto;
+    height: 225px;
+    margin:auto;
+  }
+  .md-card-image-alt {
+    height: 225px;
+    max-width: 375px;
+    margin:auto;
   }
 }
 
@@ -79,15 +93,6 @@ html, body{
   background-color: white;
   margin: 2rem;
   overflow: auto;
-}
-
-.morePadding{
-  padding: 2rem;
-}
-
-.addMargin{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 hr{
@@ -136,7 +141,7 @@ hr{
   background-repeat: no-repeat;
   background-position: center;
   padding-bottom: 5rem;
-  min-height: 650px;
+  min-height: 700px;
 
 
   .callout-content{
@@ -237,10 +242,18 @@ hr{
 
 #projects{
   .md-card-image{
+    margin: auto;
     width: auto;
-    height: 150px;
+    max-width: 350px;
   }
 
+  md-card{
+    width: auto;
+    
+    p{
+      //width: 100%;
+    }
+  }
 }
 
 .md-sidenav-right{
@@ -273,6 +286,6 @@ hr{
   min-height: 100vh;
   width: 100%;
   overflow: scroll;
- padding-bottom: 75px;
+  padding-bottom: 75px;
 
 }
