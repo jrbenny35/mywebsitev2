@@ -41,7 +41,7 @@ app.use(function (req, res, next) {
 
 app.use(require('./routes'));
 
-mongoose.connect(uri , function (error) {
+mongoose.connect(uri || mongoLocal , function (error) {
   if (error) console.error(error);
   else console.log('mongo connected');
 });
