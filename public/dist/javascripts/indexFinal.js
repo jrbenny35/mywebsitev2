@@ -67,6 +67,7 @@ myApp.config(function ($mdThemingProvider) {
         .accentPalette('pink');
 
 });
+
 /**
  * Created by root on 10/1/15.
  */

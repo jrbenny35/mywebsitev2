@@ -9,7 +9,7 @@ div#projects(layout-gt-lg='row' layout-align='center center' layout-margin )
   div(flex class='main-card' ng-repeat='project in projects' )
     md-content()
       md-card().md-padding
-        img.md-card-image(src='images/resumeLogo.png')
+        img.md-card-image(src="{{ project.image }}")
         md-card-content.md-card-content
           hr
           h2 {{ project.title }}

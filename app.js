@@ -10,7 +10,6 @@ var mongoose = require('mongoose');
 //var _ = require('lodash');
 var mongoLocal = ("mongodb://localhost/MyMeanWebsite");
 
-
 var app = express();
 
 // view engine setup
