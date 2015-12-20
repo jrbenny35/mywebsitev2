@@ -9,6 +9,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 //var _ = require('lodash');
 var mongoLocal = ("mongodb://localhost/MyMeanWebsite");
+var uri = process.env.MONGOLAB_URI;
 
 var app = express();
 
@@ -40,11 +41,14 @@ app.use(function (req, res, next) {
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGOLAB_URI || mongoLocal, function (error) {
+mongoose.connect(uri , function (error) {
   if (error) console.error(error);
   else console.log('mongo connected');
 });
-mongoose.connection.once('open', function(){
+
+var db = mongoose.connection;
+
+db.once('open' ,function(){
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port: ' + app.get('port'));
