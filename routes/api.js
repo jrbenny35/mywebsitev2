@@ -60,7 +60,7 @@ router.post('/contact', function(req, res){
    //Create Transport Service
    sendgrid.send({
       to:       'bennyjr169@gmail.com',
-      from:     'Bennyjr Website',
+      from:     'Bennyjr Website bennyjr169@gmail.com',
       subject:  req.body.name + ' Sent you an email!',
       text:     req.body.email + ' Sent you an email. They wrote: ' + req.body.message
    }, function(err, json) {
