@@ -7,6 +7,8 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+
 
 
 //models
@@ -54,34 +56,16 @@ router.post('/contact', function(req, res){
       }
    });
 
-   //Nodemailer email
-   console.log('Nodemailer post ' + req.body);
 
    //Create Transport Service
-   var transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-         user: 'jrbenny169@gmail.com',
-         pass: 'Rustler@135'
-      }
-   });
-
-   //Define mail parameters
-   var mailOptions = {
-      from: 'Node app bennyjr169@gmail.com', // sender address
-      to: 'bennyjr169@gmail.com', // list of receivers
-      subject: req.body.name + ' Sent you an email!', // Subject line
-      text: req.body.email + ' Sent you an email. They wrote: ' + req.body.message // plaintext body
-   };
-
-   // send mail with defined transport object
-   transporter.sendMail(mailOptions, function(error, info){
-      if(error){
-         return console.log(error);
-      }
-      console.log('Message sent: ' + info.response);
-      transporter.close();
-
+   sendgrid.send({
+      to:       'bennyjr169@gmail.com',
+      from:     'Bennyjr Website',
+      subject:  req.body.name + ' Sent you an email!',
+      text:     req.body.email + ' Sent you an email. They wrote: ' + req.body.message
+   }, function(err, json) {
+      if (err) { return console.error(err); }
+      console.log(json);
    });
 
 
